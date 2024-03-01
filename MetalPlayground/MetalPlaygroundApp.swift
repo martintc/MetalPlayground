@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MetalPlaygroundApp: App {
+    @StateObject private var triangle: Triangle = Triangle.shared
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup() {
+            RenderedView()
+                .environmentObject(triangle)
         }
     }
 }
