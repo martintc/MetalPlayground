@@ -1,14 +1,14 @@
 //
-//  Camera.swift
+//  FirstCamera.swift
 //  MetalPlayground
 //
-//  Created by Todd Martin on 3/1/24.
+//  Created by Todd Martin on 3/3/24.
 //
 
 import Foundation
 import simd
 
-class Camera: ObservableObject {
+class FirstCamera: ObservableObject {
     @Published var right: simd_float3
     @Published var up: simd_float3
     @Published var forward: simd_float3
@@ -19,14 +19,14 @@ class Camera: ObservableObject {
     @Published var nearPlane: Float = 0.1
     @Published var farPlane: Float = 20
     
-    static let shared = Camera()
+    static let shared = FirstCamera()
     
     init() {
         right = simd_float3()
         up = simd_float3()
         forward = simd_float3()
         translation = simd_float3()
-        self.calculateForward(from: simd_float3(0, 0, 1), to: simd_float3(0, 0, 0))
+        self.calculateForward(from: simd_float3(0, 0, -1), to: simd_float3(0, 0, 0))
         self.calculateRight()
         self.calculateUp()
         self.calculateTransaltion()

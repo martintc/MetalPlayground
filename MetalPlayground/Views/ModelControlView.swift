@@ -14,6 +14,7 @@ struct ModelControlView: View {
 //    @State private var modelScale: simd_float3 = Triangle.shared.scale
 //    @State private var modelRotate: simd_float3 = Triangle.shared.rotate
 //    @State private var modelTranslate: simd_float3 = Triangle.shared.translate
+    @EnvironmentObject var debugCamera: DebugCamera
     
     var body: some View {
         HStack {
@@ -25,17 +26,35 @@ struct ModelControlView: View {
                 VectorComponent(operation: "Scale",
                                 xAxis: $triangle.scale.x,
                                 yAxis: $triangle.scale.y,
-                                zAxis: $triangle.scale.z)
+                                zAxis: $triangle.scale.z,
+                                xLower: 0,
+                                xUpper: 10,
+                                yLower: 0,
+                                yUpper: 10,
+                                zLower: 0,
+                                zUpper: 10)
             
                 VectorComponent(operation: "Rotate",
                                 xAxis: $triangle.rotate.x,
                                 yAxis: $triangle.rotate.y,
-                                zAxis: $triangle.rotate.z)
+                                zAxis: $triangle.rotate.z,
+                                xLower: 0,
+                                xUpper: 10,
+                                yLower: 0,
+                                yUpper: 10,
+                                zLower: 0,
+                                zUpper: 10)
                 
                 VectorComponent(operation: "Translate",
                                 xAxis: $triangle.translate.x,
                                 yAxis: $triangle.translate.y,
-                                zAxis: $triangle.translate.z)
+                                zAxis: $triangle.translate.z,
+                                xLower: -10,
+                                xUpper: 10,
+                                yLower: -10,
+                                yUpper: 10,
+                                zLower: -10,
+                                zUpper: 10)
             }
             
             MatrixComponent(matrix: simd_float4x4(scaleBy: triangle.scale,
@@ -45,8 +64,19 @@ struct ModelControlView: View {
             VStack {
                 Text("Camera")
                 
-                
+                VectorComponent(operation: "Position",
+                                xAxis: $debugCamera.position.x,
+                                yAxis: $debugCamera.position.y,
+                                zAxis: $debugCamera.position.z,
+                                xLower: -10,
+                                xUpper: 10,
+                                yLower: -10,
+                                yUpper: 10,
+                                zLower: -10,
+                                zUpper: 10)
             }
+            
+            MatrixComponent(matrix: debugCamera.viewMatrix)
             
         }
     }

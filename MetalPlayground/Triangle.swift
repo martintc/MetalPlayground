@@ -26,9 +26,9 @@ class Triangle: ObservableObject {
     
     init() {
         let vertices: [Float] = [
-            -0.5, -0.5, //vertex 0
-             0.5, -0.5, //vertex 1
-             0.0,  0.5  //vertex 2
+            -0.5, -0.5, 0.0, //vertex 0
+             0.5, -0.5, 0.0, //vertex 1
+             0.0,  0.5, 0.0  //vertex 2
         ]
         
         guard let device = MTLCreateSystemDefaultDevice() else {

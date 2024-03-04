@@ -9,7 +9,7 @@
 using namespace metal;
 
 struct Vertex {
-    float2 position [[attribute((0))]];
+    float3 position [[attribute((0))]];
 };
 
 struct Uniforms {
@@ -19,7 +19,7 @@ struct Uniforms {
 };
 
 vertex float4 vertex_shader(Vertex in [[stage_in]], constant Uniforms &uniforms [[buffer(0)]]) {
-    return uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * float4(in.position, 0.0, 1.0);
+    return uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * float4(in.position, 1.0);
 }
 
 fragment float4 fragment_shader() {

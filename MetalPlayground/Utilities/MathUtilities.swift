@@ -33,6 +33,21 @@ extension simd_float4x4 {
                           simd_float4(0, 0, w, 0))
         return result
     }
+    
+    mutating func translate(direction: simd_float3) {
+        var result = matrix_identity_float4x4
+        
+        let x: Float = direction.x
+        let y: Float = direction.y
+        let z: Float = direction.z
+        
+        result.columns = (simd_float4(1, 0, 0, 0),
+                          simd_float4(0, 1, 0, 0),
+                          simd_float4(0, 0, 1, 0),
+                          simd_float4(x, y, z, 1))
+        
+        self = matrix_multiply(self, result)
+    }
 }
 
 func getScaleMatrix(_ vector: simd_float3) -> simd_float4x4 {

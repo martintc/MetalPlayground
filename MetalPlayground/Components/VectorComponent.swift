@@ -13,23 +13,30 @@ struct VectorComponent: View {
     @Binding var yAxis: Float
     @Binding var zAxis: Float
     
+    var xLower: Float
+    var xUpper: Float
+    var yLower: Float
+    var yUpper: Float
+    var zLower: Float
+    var zUpper: Float
+    
     var body: some View {
         HStack {
             Text("\(operation)")
             
             VStack {
                 Text("\(xAxis)")
-                Slider(value: $xAxis, in: 0...10)
+                Slider(value: $xAxis, in: xLower...xUpper)
             }
             
             VStack {
                 Text("\(yAxis)")
-                Slider(value: $yAxis, in: 0...10)
+                Slider(value: $yAxis, in: yLower...yUpper)
             }
             
             VStack {
                 Text("\(zAxis)")
-                Slider(value: $zAxis, in: 0...10)
+                Slider(value: $zAxis, in: zLower...zUpper)
             }
         }
         .padding()
@@ -37,5 +44,14 @@ struct VectorComponent: View {
 }
 
 #Preview {
-    VectorComponent(operation: "Scale", xAxis: .constant(Float(0)), yAxis: .constant(Float(0)), zAxis: .constant(Float(0)))
+    VectorComponent(operation: "Scale", 
+                    xAxis: .constant(Float(0)),
+                    yAxis: .constant(Float(0.0)),
+                    zAxis: .constant(Float(1.0)),
+                    xLower: Float(0.0),
+                    xUpper: Float(0.0),
+                    yLower: Float(0.0),
+                    yUpper: Float(0.0),
+                    zLower: Float(0.0),
+                    zUpper: Float(0.0))
 }

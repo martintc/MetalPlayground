@@ -9,5 +9,5 @@ import Foundation
 import simd
 
 struct Vertex {
-    var position: simd_float2
+    var position: simd_float3
 }

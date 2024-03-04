@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct MetalPlaygroundApp: App {
     @StateObject private var triangle: Triangle = Triangle.shared
-    @StateObject private var camera: Camera = Camera.shared
+    @StateObject private var debugCamera: DebugCamera = DebugCamera.shared
     var body: some Scene {
         WindowGroup() {
             RenderedView()
                 .environmentObject(triangle)
-                .environmentObject(camera)
+                .environmentObject(debugCamera)
         }
     }
 }

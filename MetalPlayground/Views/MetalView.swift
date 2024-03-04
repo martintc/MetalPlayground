@@ -54,7 +54,7 @@ struct MetalView: NSViewRepresentable {
             vertexDescriptor.layouts[30].stepRate = 1
             vertexDescriptor.layouts[30].stepFunction = .perVertex
             
-            vertexDescriptor.attributes[0].format = .float2
+            vertexDescriptor.attributes[0].format = .float3
             vertexDescriptor.attributes[0].offset = MemoryLayout.offset(of: \Vertex.position)!
             vertexDescriptor.attributes[0].bufferIndex = 30
             
@@ -95,7 +95,7 @@ struct MetalView: NSViewRepresentable {
             let re = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd!)
             
             var vertexUniforms = VertexUniforms(modelMatrix: Triangle.shared.modelMatrix,
-                                                viewMatrix: Camera.shared.viewMatrix,
+                                                viewMatrix: DebugCamera.shared.viewMatrix,
                                                 projectionMatrix: simd_float4x4.perspective(degreesFov: 45, aspectRatio: 1, near: 0.1, far: 100))
             
             re?.setRenderPipelineState(self.renderPipelineState)
