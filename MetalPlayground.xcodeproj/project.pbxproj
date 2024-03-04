@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EAB1ED1A2B92E9FD005B81DD /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1ED192B92E9FD005B81DD /* Camera.swift */; };
+		EAB1ED3F2B9438E8005B81DD /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1ED3E2B9438E8005B81DD /* Renderer.swift */; };
 		EAE026912B8EF3C600F15821 /* MetalPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026902B8EF3C600F15821 /* MetalPlaygroundApp.swift */; };
 		EAE026932B8EF3C600F15821 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026922B8EF3C600F15821 /* ContentView.swift */; };
 		EAE026952B8EF3C800F15821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE026942B8EF3C800F15821 /* Assets.xcassets */; };
 		EAE026982B8EF3C800F15821 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE026972B8EF3C800F15821 /* Preview Assets.xcassets */; };
-		EAE026A22B8EF4C300F15821 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026A12B8EF4C300F15821 /* Renderer.swift */; };
 		EAE026A62B90448100F15821 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026A52B90448100F15821 /* MetalView.swift */; };
 		EAE026A82B90477C00F15821 /* RenderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026A72B90477C00F15821 /* RenderedView.swift */; };
 		EAE026AA2B904A3900F15821 /* ModelControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026A92B904A3900F15821 /* ModelControlView.swift */; };
@@ -25,13 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EAB1ED192B92E9FD005B81DD /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		EAB1ED3E2B9438E8005B81DD /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		EAE0268D2B8EF3C600F15821 /* MetalPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE026902B8EF3C600F15821 /* MetalPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPlaygroundApp.swift; sourceTree = "<group>"; };
 		EAE026922B8EF3C600F15821 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EAE026942B8EF3C800F15821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAE026972B8EF3C800F15821 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EAE026992B8EF3C800F15821 /* MetalPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalPlayground.entitlements; sourceTree = "<group>"; };
-		EAE026A12B8EF4C300F15821 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		EAE026A52B90448100F15821 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		EAE026A72B90477C00F15821 /* RenderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderedView.swift; sourceTree = "<group>"; };
 		EAE026A92B904A3900F15821 /* ModelControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControlView.swift; sourceTree = "<group>"; };
@@ -82,11 +84,12 @@
 				EAE026942B8EF3C800F15821 /* Assets.xcassets */,
 				EAE026992B8EF3C800F15821 /* MetalPlayground.entitlements */,
 				EAE026962B8EF3C800F15821 /* Preview Content */,
-				EAE026A12B8EF4C300F15821 /* Renderer.swift */,
-				EAE026B42B9057DE00F15821 /* Triangle.swift */,
-				EAFD0AF62B91565F00521B88 /* Vertex.swift */,
 				EAFD0AF82B91580000521B88 /* Shaders.metal */,
+				EAE026B42B9057DE00F15821 /* Triangle.swift */,
+				EAB1ED192B92E9FD005B81DD /* Camera.swift */,
+				EAFD0AF62B91565F00521B88 /* Vertex.swift */,
 				EAFD0AFA2B9159A900521B88 /* VertexUniforms.swift */,
+				EAB1ED3E2B9438E8005B81DD /* Renderer.swift */,
 			);
 			path = MetalPlayground;
 			sourceTree = "<group>";
@@ -201,14 +204,15 @@
 				EAE026B02B9050D800F15821 /* MatrixComponent.swift in Sources */,
 				EAE026A62B90448100F15821 /* MetalView.swift in Sources */,
 				EAE026AC2B904B6B00F15821 /* VectorComponent.swift in Sources */,
-				EAE026A22B8EF4C300F15821 /* Renderer.swift in Sources */,
 				EAFD0AF72B91565F00521B88 /* Vertex.swift in Sources */,
 				EAE026932B8EF3C600F15821 /* ContentView.swift in Sources */,
 				EAE026912B8EF3C600F15821 /* MetalPlaygroundApp.swift in Sources */,
 				EAE026AA2B904A3900F15821 /* ModelControlView.swift in Sources */,
 				EAE026B52B9057DE00F15821 /* Triangle.swift in Sources */,
 				EAE026B32B9051D100F15821 /* MathUtilities.swift in Sources */,
+				EAB1ED1A2B92E9FD005B81DD /* Camera.swift in Sources */,
 				EAE026A82B90477C00F15821 /* RenderedView.swift in Sources */,
+				EAB1ED3F2B9438E8005B81DD /* Renderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

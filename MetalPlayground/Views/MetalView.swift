@@ -92,15 +92,15 @@ struct MetalView: NSViewRepresentable {
             let commandBuffer = metalCommandQueue.makeCommandBuffer()
             let rpd = view.currentRenderPassDescriptor
             rpd?.colorAttachments[0].clearColor = MTLClearColorMake(0, 0, 0, 1)
-//            rpd?.colorAttachments[0].loadAction = .clear
-//            rpd?.colorAttachments[0].storeAction = .store
             let re = commandBuffer?.makeRenderCommandEncoder(descriptor: rpd!)
             
-            var vertexUniforms = VertexUniforms(modelMatrix: Triangle.shared.modelMatrix)
+            var vertexUniforms = VertexUniforms(modelMatrix: Triangle.shared.modelMatrix,
+                                                viewMatrix: Camera.shared.viewMatrix,
+                                                projectionMatrix: simd_float4x4.perspective(degreesFov: 45, aspectRatio: 1, near: 0.1, far: 100))
             
             re?.setRenderPipelineState(self.renderPipelineState)
             
-            re?.setVertexBytes(&vertexUniforms.modelMatrix, length: MemoryLayout.stride(ofValue: vertexUniforms.modelMatrix), index: 0)
+            re?.setVertexBytes(&vertexUniforms, length: MemoryLayout.stride(ofValue: vertexUniforms), index: 0)
             
             re?.setVertexBuffer(Triangle.shared.vertexBuffer, offset: 0, index: 30)
             

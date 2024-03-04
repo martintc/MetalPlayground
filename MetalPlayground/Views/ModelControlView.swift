@@ -42,6 +42,12 @@ struct ModelControlView: View {
                                                   rotateBy: triangle.rotate,
                                                   translateBy: triangle.translate))
             
+            VStack {
+                Text("Camera")
+                
+                
+            }
+            
         }
     }
 }

@@ -14,10 +14,12 @@ struct Vertex {
 
 struct Uniforms {
     float4x4 modelMatrix;
+    float4x4 viewMatrix;
+    float4x4 projectionMatrix;
 };
 
 vertex float4 vertex_shader(Vertex in [[stage_in]], constant Uniforms &uniforms [[buffer(0)]]) {
-    return uniforms.modelMatrix * float4(in.position, 0.0, 1.0);
+    return uniforms.projectionMatrix * uniforms.viewMatrix * uniforms.modelMatrix * float4(in.position, 0.0, 1.0);
 }
 
 fragment float4 fragment_shader() {

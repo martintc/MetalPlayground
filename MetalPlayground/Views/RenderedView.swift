@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct RenderedView: View {
-    @Environment(\.openWindow) private var openWindow
-    @Environment(\.dismissWindow) private var dismissWindow
-
-    
     var body: some View {
         VStack {
             ModelControlView()
