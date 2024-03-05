@@ -57,9 +57,7 @@ struct ModelControlView: View {
                                 zUpper: 10)
             }
             
-            MatrixComponent(matrix: simd_float4x4(scaleBy: triangle.scale,
-                                                  rotateBy: triangle.rotate,
-                                                  translateBy: triangle.translate))
+            MatrixComponent(matrix: Triangle.shared.modelMatrix)
             
             VStack {
                 Text("Camera")
@@ -74,6 +72,17 @@ struct ModelControlView: View {
                                 yUpper: 10,
                                 zLower: -10,
                                 zUpper: 10)
+                
+                VectorComponent(operation: "Rotation",
+                                xAxis: $debugCamera.rotation.x,
+                                yAxis: $debugCamera.rotation.y,
+                                zAxis: $debugCamera.rotation.z,
+                                xLower: 0,
+                                xUpper: 90,
+                                yLower: 0,
+                                yUpper: 90,
+                                zLower: 0,
+                                zUpper: 90)
             }
             
             MatrixComponent(matrix: debugCamera.viewMatrix)

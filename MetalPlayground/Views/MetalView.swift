@@ -96,7 +96,7 @@ struct MetalView: NSViewRepresentable {
             
             var vertexUniforms = VertexUniforms(modelMatrix: Triangle.shared.modelMatrix,
                                                 viewMatrix: DebugCamera.shared.viewMatrix,
-                                                projectionMatrix: simd_float4x4.perspective(degreesFov: 45, aspectRatio: 1, near: 0.1, far: 100))
+                                                projectionMatrix: DebugCamera.shared.projectionMatrix)
             
             re?.setRenderPipelineState(self.renderPipelineState)
             
@@ -104,7 +104,12 @@ struct MetalView: NSViewRepresentable {
             
             re?.setVertexBuffer(Triangle.shared.vertexBuffer, offset: 0, index: 30)
             
-            re?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
+//            re?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3)
+            re?.drawIndexedPrimitives(type: .triangle,
+                                      indexCount: 3,
+                                      indexType: .uint16,
+                                      indexBuffer: Triangle.shared.indexBuffer,
+                                      indexBufferOffset: 0)
             
             re?.endEncoding()
             commandBuffer?.present(drawable)
