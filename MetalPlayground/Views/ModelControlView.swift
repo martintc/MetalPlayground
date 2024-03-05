@@ -77,12 +77,12 @@ struct ModelControlView: View {
                                 xAxis: $debugCamera.rotation.x,
                                 yAxis: $debugCamera.rotation.y,
                                 zAxis: $debugCamera.rotation.z,
-                                xLower: 0,
-                                xUpper: 90,
-                                yLower: 0,
-                                yUpper: 90,
-                                zLower: 0,
-                                zUpper: 90)
+                                xLower: -1,
+                                xUpper: 1,
+                                yLower: -1,
+                                yUpper: 1,
+                                zLower: -1,
+                                zUpper: 1)
             }
             
             MatrixComponent(matrix: debugCamera.viewMatrix)
