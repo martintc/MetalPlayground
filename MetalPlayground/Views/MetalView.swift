@@ -85,7 +85,26 @@ struct MetalView: NSViewRepresentable {
         func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         }
         
+        func update() {
+            if (Keyboard.IsKeyPressed(.rightArrow)) {
+                DebugCamera.shared.position.x -= 0.1
+            }
+            
+            if (Keyboard.IsKeyPressed(.leftArrow)) {
+                DebugCamera.shared.position.x += 0.1
+            }
+            
+            if (Keyboard.IsKeyPressed(.upArrow)) {
+                DebugCamera.shared.position.y -= 0.1
+            }
+            
+            if (Keyboard.IsKeyPressed(.downArrow)) {
+                DebugCamera.shared.position.y += 0.1
+            }
+        }
+        
         func draw(in view: MTKView) {
+            update()
             guard let drawable = view.currentDrawable else {
                 return
             }

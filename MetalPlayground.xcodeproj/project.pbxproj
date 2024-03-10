@@ -11,6 +11,9 @@
 		EAB1ED3F2B9438E8005B81DD /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1ED3E2B9438E8005B81DD /* Renderer.swift */; };
 		EAB1ED412B959295005B81DD /* FirstCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1ED402B959295005B81DD /* FirstCamera.swift */; };
 		EAB1ED432B95944B005B81DD /* DebugCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB1ED422B95944B005B81DD /* DebugCamera.swift */; };
+		EADE571F2B9D8C6900B9E93A /* MTKViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE571E2B9D8C6900B9E93A /* MTKViewExtensions.swift */; };
+		EADE57232B9D8D5300B9E93A /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE57222B9D8D5300B9E93A /* Keyboard.swift */; };
+		EADE57252B9D8DED00B9E93A /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE57242B9D8DED00B9E93A /* Keycode.swift */; };
 		EAE026912B8EF3C600F15821 /* MetalPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026902B8EF3C600F15821 /* MetalPlaygroundApp.swift */; };
 		EAE026952B8EF3C800F15821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE026942B8EF3C800F15821 /* Assets.xcassets */; };
 		EAE026982B8EF3C800F15821 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE026972B8EF3C800F15821 /* Preview Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		EAB1ED3E2B9438E8005B81DD /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		EAB1ED402B959295005B81DD /* FirstCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCamera.swift; sourceTree = "<group>"; };
 		EAB1ED422B95944B005B81DD /* DebugCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugCamera.swift; sourceTree = "<group>"; };
+		EADE571E2B9D8C6900B9E93A /* MTKViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTKViewExtensions.swift; sourceTree = "<group>"; };
+		EADE57222B9D8D5300B9E93A /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		EADE57242B9D8DED00B9E93A /* Keycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
 		EAE0268D2B8EF3C600F15821 /* MetalPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE026902B8EF3C600F15821 /* MetalPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPlaygroundApp.swift; sourceTree = "<group>"; };
 		EAE026942B8EF3C800F15821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +75,23 @@
 			path = Cameras;
 			sourceTree = "<group>";
 		};
+		EADE57202B9D8C6D00B9E93A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EADE571E2B9D8C6900B9E93A /* MTKViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EADE57212B9D8D4900B9E93A /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				EADE57222B9D8D5300B9E93A /* Keyboard.swift */,
+				EADE57242B9D8DED00B9E93A /* Keycode.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 		EAE026842B8EF3C600F15821 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +111,8 @@
 		EAE0268F2B8EF3C600F15821 /* MetalPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				EADE57212B9D8D4900B9E93A /* Input */,
+				EADE57202B9D8C6D00B9E93A /* Extensions */,
 				EAE026B12B9051C400F15821 /* Utilities */,
 				EAE026AE2B90501E00F15821 /* Components */,
 				EAE026AD2B90500900F15821 /* Views */,
@@ -214,14 +239,17 @@
 				EAFD0AF92B91580000521B88 /* Shaders.metal in Sources */,
 				EAE026B02B9050D800F15821 /* MatrixComponent.swift in Sources */,
 				EAE026A62B90448100F15821 /* MetalView.swift in Sources */,
+				EADE57252B9D8DED00B9E93A /* Keycode.swift in Sources */,
 				EAE026AC2B904B6B00F15821 /* VectorComponent.swift in Sources */,
 				EAFD0AF72B91565F00521B88 /* Vertex.swift in Sources */,
 				EAE026912B8EF3C600F15821 /* MetalPlaygroundApp.swift in Sources */,
 				EAE026AA2B904A3900F15821 /* ModelControlView.swift in Sources */,
 				EAE026B52B9057DE00F15821 /* Triangle.swift in Sources */,
+				EADE571F2B9D8C6900B9E93A /* MTKViewExtensions.swift in Sources */,
 				EAB1ED412B959295005B81DD /* FirstCamera.swift in Sources */,
 				EAE026B32B9051D100F15821 /* MathUtilities.swift in Sources */,
 				EAB1ED1A2B92E9FD005B81DD /* Camera.swift in Sources */,
+				EADE57232B9D8D5300B9E93A /* Keyboard.swift in Sources */,
 				EAE026A82B90477C00F15821 /* RenderedView.swift in Sources */,
 				EAB1ED3F2B9438E8005B81DD /* Renderer.swift in Sources */,
 				EAB1ED432B95944B005B81DD /* DebugCamera.swift in Sources */,
