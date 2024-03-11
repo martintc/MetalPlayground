@@ -14,6 +14,7 @@
 		EADE571F2B9D8C6900B9E93A /* MTKViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE571E2B9D8C6900B9E93A /* MTKViewExtensions.swift */; };
 		EADE57232B9D8D5300B9E93A /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE57222B9D8D5300B9E93A /* Keyboard.swift */; };
 		EADE57252B9D8DED00B9E93A /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE57242B9D8DED00B9E93A /* Keycode.swift */; };
+		EADE57292B9EBEBA00B9E93A /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADE57282B9EBEBA00B9E93A /* Mouse.swift */; };
 		EAE026912B8EF3C600F15821 /* MetalPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE026902B8EF3C600F15821 /* MetalPlaygroundApp.swift */; };
 		EAE026952B8EF3C800F15821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE026942B8EF3C800F15821 /* Assets.xcassets */; };
 		EAE026982B8EF3C800F15821 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE026972B8EF3C800F15821 /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		EADE571E2B9D8C6900B9E93A /* MTKViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTKViewExtensions.swift; sourceTree = "<group>"; };
 		EADE57222B9D8D5300B9E93A /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		EADE57242B9D8DED00B9E93A /* Keycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
+		EADE57282B9EBEBA00B9E93A /* Mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		EAE0268D2B8EF3C600F15821 /* MetalPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE026902B8EF3C600F15821 /* MetalPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPlaygroundApp.swift; sourceTree = "<group>"; };
 		EAE026942B8EF3C800F15821 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,8 +90,27 @@
 			children = (
 				EADE57222B9D8D5300B9E93A /* Keyboard.swift */,
 				EADE57242B9D8DED00B9E93A /* Keycode.swift */,
+				EADE57282B9EBEBA00B9E93A /* Mouse.swift */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		EADE57262B9EBE0D00B9E93A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAFD0AFA2B9159A900521B88 /* VertexUniforms.swift */,
+				EAE026B42B9057DE00F15821 /* Triangle.swift */,
+				EAFD0AF62B91565F00521B88 /* Vertex.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EADE57272B9EBE1E00B9E93A /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				EAFD0AF82B91580000521B88 /* Shaders.metal */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 		EAE026842B8EF3C600F15821 = {
@@ -111,6 +132,8 @@
 		EAE0268F2B8EF3C600F15821 /* MetalPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				EADE57272B9EBE1E00B9E93A /* Shaders */,
+				EADE57262B9EBE0D00B9E93A /* Models */,
 				EADE57212B9D8D4900B9E93A /* Input */,
 				EADE57202B9D8C6D00B9E93A /* Extensions */,
 				EAE026B12B9051C400F15821 /* Utilities */,
@@ -120,10 +143,6 @@
 				EAE026942B8EF3C800F15821 /* Assets.xcassets */,
 				EAE026992B8EF3C800F15821 /* MetalPlayground.entitlements */,
 				EAE026962B8EF3C800F15821 /* Preview Content */,
-				EAFD0AF82B91580000521B88 /* Shaders.metal */,
-				EAE026B42B9057DE00F15821 /* Triangle.swift */,
-				EAFD0AF62B91565F00521B88 /* Vertex.swift */,
-				EAFD0AFA2B9159A900521B88 /* VertexUniforms.swift */,
 				EAB1ED3E2B9438E8005B81DD /* Renderer.swift */,
 				EAE026902B8EF3C600F15821 /* MetalPlaygroundApp.swift */,
 			);
@@ -247,6 +266,7 @@
 				EAE026B52B9057DE00F15821 /* Triangle.swift in Sources */,
 				EADE571F2B9D8C6900B9E93A /* MTKViewExtensions.swift in Sources */,
 				EAB1ED412B959295005B81DD /* FirstCamera.swift in Sources */,
+				EADE57292B9EBEBA00B9E93A /* Mouse.swift in Sources */,
 				EAE026B32B9051D100F15821 /* MathUtilities.swift in Sources */,
 				EAB1ED1A2B92E9FD005B81DD /* Camera.swift in Sources */,
 				EADE57232B9D8D5300B9E93A /* Keyboard.swift in Sources */,

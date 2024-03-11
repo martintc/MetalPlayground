@@ -83,6 +83,7 @@ struct MetalView: NSViewRepresentable {
         }
         
         func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+            // do nothing
         }
         
         func update() {
@@ -101,6 +102,16 @@ struct MetalView: NSViewRepresentable {
             if (Keyboard.IsKeyPressed(.downArrow)) {
                 DebugCamera.shared.position.y += 0.1
             }
+            
+            if (Mouse.IsMouseButtonPressed(button: .left)) {
+                DebugCamera.shared.position.z -= 0.1
+            }
+            
+            if (Mouse.IsMouseButtonPressed(button: .right)) {
+                DebugCamera.shared.position.z += 0.1
+            }
+            
+            print(Mouse.GetDX())
         }
         
         func draw(in view: MTKView) {
